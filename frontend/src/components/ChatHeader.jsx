@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore";
 import { useChatStore } from "../store/useChatStore";
+import { Link } from "react-router-dom";
 
 const ChatHeader = () => {
   const { selectedUser, setSelectedUser } = useChatStore();
@@ -15,10 +16,11 @@ const ChatHeader = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           {/* Avatar */}
-          <Link to={"/profile"}>
           <div className="avatar">
             <div className="size-10 rounded-full relative">
+              <Link to={"/profile"}>
               <img src={selectedUser.profilePic || randomAvator} alt={selectedUser.fullName} />
+              </Link>
             </div>
           </div>
 
@@ -30,7 +32,6 @@ const ChatHeader = () => {
               {onlineUsers.includes(selectedUser._id) ? "Online" : "Offline"}
             </p>
           </div>
-          </Link>
         </div>
 
         {/* Close button */}
