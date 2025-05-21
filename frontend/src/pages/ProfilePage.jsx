@@ -22,6 +22,12 @@ const ProfilePage = () => {
     };
   };
 
+
+// random avatar
+  const idx = Math.floor(Math.random() * 100) + 1; // 1-100 included
+  const randomAvator = `https://avatar.iran.liara.run/public/${idx}.png`;
+
+
   return (
     <div className="h-screen pt-20">
       <div className="max-w-2xl mx-auto p-4 py-8">
@@ -36,7 +42,7 @@ const ProfilePage = () => {
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
               <img
-                src={selectedImg || authUser.profilePic}
+                src={selectedImg? authUser.profilePic : randomAvator }
                 alt="Profile"
                 className="size-32 rounded-full object-cover border-4 "
               />
