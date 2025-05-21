@@ -18,9 +18,9 @@ const ChatHeader = () => {
           {/* Avatar */}
           <div className="avatar">
             <div className="size-10 rounded-full relative">
-              <Link to={"/profile"}>
+              
               <img src={selectedUser.profilePic || randomAvator} alt={selectedUser.fullName} />
-              </Link>
+              
             </div>
           </div>
 
